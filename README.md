@@ -223,8 +223,53 @@ Es muy similar al merge sort solo que va ocupando un pivote y va ordenando mayor
 ![quicksort](quicksort.png)
 
 ```c++
+// primero definiremos el pivote aleatorio mediante una función simple 
 
+int random(int i, int j){
+    return i + rand() % (j -i + 1);
+}
 
+// esto no es lo importante del código
+
+int split(vector<int>& arr, int i, int j){
+    int p = random(i,j);
+    int pivot = arr[p];
+
+    while (i < j){
+        while (i < p && arr[j] <= pivot){
+            i++;
+        }
+        //aca solamente movemos hasta que encontramos un numero mayor al pivote
+        while (j < p && arr[j] >= pivot){
+            j--;
+        }
+
+        if (i < j){
+            swap(arr[i], arr[j])
+        }
+        if (i == p) {
+            p = j;
+        } else if (j == p) {
+            p = i;
+        }
+    }
+    return p;
+
+}
 ```
+
+```c++
+
+void quicksort(vector<int>& arr, int i, int j){
+    if (i < j){
+        int pivotIndex = partition(arr,i,j);
+
+        quicksort(arr,i,pivotIndex - 1);
+        quicksort(arr,pivotIndex + 1, j);
+    }
+}
+```
+
+
 
 
