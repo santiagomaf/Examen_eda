@@ -206,3 +206,25 @@ lista -> [12, 11, 13, 5, 6, 7]
 la primera llamada va a ser meter esta lista al mergesort con los valores de inicio y el final, en este caso 0 y 5 (el 5 porque la lista es de porte 6 - 1)\
 mergesort(lista, 0, 5)\
 
+dentro de este se calcula la mitad de la lista y se vuelve a dividir cada sub-lista y ordenarla
+
+mergesort(lista, 0, 2)\
+mergesort(lista, 3, 5)\
+
+aca lo que esta pasando por dentro es que el punto medio de mergesort(lista, 0, 2) es 1, osea las dos listas que quedan son lista[0,1] = {12,11}
+y lista[2] = {13}, después agarra la lista que todavía no esta ordenada osea {12,11} y la vuelve a dividir, en verdad esta paso se repite hasta que este el caso base.\
+quedando de la siguiente manera {12} y {11} luego gracias al merge definido anteriormente queda un solo arreglo de la siguiente manera\
+{11,12} luego se hace el merge con el {13} que quedo pendiente osea queda {11,12,13} asi ordenando todo, para el caso de la lista de la derecha es exactamente lo mismo.\
+El tiempo de ejecución es O(Nlog(N)) ya que tenemos division de listas y recorre la lista también una sola vez.
+
+### Quicksort
+Es muy similar al merge sort solo que va ocupando un pivote y va ordenando mayor a un lado y menor a otro.
+
+![quicksort](quicksort.png)
+
+```c++
+
+
+```
+
+
