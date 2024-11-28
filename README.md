@@ -390,6 +390,20 @@ Lo que podemos ver aca es que ocupa recursividad y va dividiendo la lista en dis
 
 
 
+# Pruebas 2
+ 
+
+
+### Nodos 
+
+
+
+
+
+
+
+
+
 
 
 
